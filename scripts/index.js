@@ -41,13 +41,14 @@ function buildRow(someTableBody, someData){
     let courseDetails = row.insertCell();
     courseDetails.innerHTML = `<a href="./details.html?courseid=${someData.id}">Show Details</a>`
 
+      let adminStuffCell = row.insertCell();
+      adminStuffCell.innerHTML = `<a href="./delete_course.html?courseid=${someData.id}">Delete Course</a>`
+
 }
 
 
 async function getCourses(){
 
-    //try says try trhese things and if it doesnt work out, fall into the catch
-    //and deal with the error
     try{
     //make the api call to get all the courses
     let response = await fetch("http://localhost:8081/api/courses")
